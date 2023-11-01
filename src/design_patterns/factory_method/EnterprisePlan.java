@@ -1,6 +1,10 @@
 package design_patterns.factory_method;
 
-public class EnterprisePlan {
+public class EnterprisePlan extends Plan {
+    @Override
+    public Double getRate() {
+        return 10.0;
+    }
     /**
      * TODO:
      * 1. extend Plan class

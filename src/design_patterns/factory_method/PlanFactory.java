@@ -17,4 +17,13 @@ public class PlanFactory {
      * 2. create an EnterprisePlan using factory method. call getRate on it and print the result to console. what is printed?
      * 3. spot the advantages of this pattern
      */
+
+    public static Plan getPlan(String type) {
+        if (type.equals("personal"))
+            return new PersonalPlan();
+        else if(type.equals("enterprise"))
+            return new EnterprisePlan();
+        else
+            throw new RuntimeException("There is not Plan of type " + type);
+    }
 }
