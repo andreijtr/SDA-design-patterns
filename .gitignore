@@ -2,8 +2,8 @@
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
-!**/.idea
-!**/sda-design-patterns.iml
+.idea/
+sda-design-patterns.iml
 
 ### Eclipse ###
 .apt_generated
