@@ -1,20 +1,17 @@
 package design_patterns.strategy;
 
+import design_patterns.strategy.salary.resolver.SalaryCalculatorResolver;
+
 public class EmployeeSalaryProvider {
 
-    public static int BASE_SALARY = 1000;
+    private SalaryCalculatorResolver salaryCalculatorResolver;
+
+    public EmployeeSalaryProvider() {
+        this.salaryCalculatorResolver = new SalaryCalculatorResolver();
+    }
 
     public int getSalary(Employee employee) {
-        switch (employee.getType()) {
-            case JUNIOR:
-                return BASE_SALARY;
-            case MIDDLE:
-                return BASE_SALARY + 100;
-            case SENIOR:
-                return BASE_SALARY + (employee.getYearsOfExperience() * 200);
-            default:
-                throw new RuntimeException("Employee type " + employee.getType() + "not exists." );
-        }
+        return salaryCalculatorResolver.resolve(employee.getType()).getSalary(employee);
     }
 }
 
