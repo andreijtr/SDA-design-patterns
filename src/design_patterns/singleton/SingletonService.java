@@ -13,4 +13,11 @@ public class SingletonService {
      * Now you have a singleton class. Great. Let put this at work.
      * Create a public method that returns a String with text "Design patterns are fun".
      */
+    private static SingletonService instance = new SingletonService();
+    private SingletonService() {}
+
+    public static SingletonService getInstance() {
+        return instance;
+    }
+
 }
